@@ -10,7 +10,11 @@ const TaskSchema = new Schema({
     done: Boolean,
     priority: { type: String, enum: ["Low", "Medium", "High"], required: true },
     created_at: Date,
-    updated_at: Date
+    updated_at: Date,
+    userId: {
+        type: Schema.Types.ObjectId,
+        ref: 'User'
+    },
 });
 
 //将架构实例与名为“Task”的数据库集合关联起来,并返回模型对象
